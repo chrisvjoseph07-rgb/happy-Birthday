@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    background-color: #fffafb;
+    color: #4a2b33;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #fdf2f8;
+}
+::-webkit-scrollbar-thumb {
+  background: #f472b6;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #db2777;
+}
+
+/* Elegant Text Glow */
+.text-glow-pink {
+  text-shadow: 0 0 15px rgba(244, 114, 182, 0.6), 0 0 30px rgba(251, 113, 133, 0.4);
+}
+
+.text-glow-gold {
+  text-shadow: 0 0 15px rgba(251, 191, 36, 0.7), 0 0 25px rgba(245, 158, 11, 0.5);
+}
+
+/* Box Glow */
+.box-glow {
+  box-shadow: 0 10px 40px -10px rgba(244, 114, 182, 0.35), 0 0 20px rgba(253, 164, 175, 0.25);
+}
+
+.box-glow-gold {
+  box-shadow: 0 10px 35px -8px rgba(217, 119, 6, 0.25), 0 0 20px rgba(251, 191, 36, 0.3);
+}
+
+/* Glassmorphism Card */
+.glass-card {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.glass-card-pink {
+  background: rgba(255, 245, 247, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(254, 205, 215, 0.6);
+}
+
+/* Polaroid Paper Effect */
+.polaroid-shadow {
+  box-shadow: 0 12px 30px rgba(183, 110, 121, 0.18), 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Washi Tape Effect */
+.washi-tape {
+  background: rgba(253, 164, 175, 0.55);
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.05);
+  backdrop-filter: blur(2px);
+}
+
+/* Candle Flame Animation */
+@keyframes flameFlicker {
+  0%, 100% {
+    transform: scale(1) rotate(-1deg);
+    filter: drop-shadow(0 0 8px #f59e0b) drop-shadow(0 0 16px #ef4444);
+  }
+  25% {
+    transform: scale(1.1, 1.15) rotate(2deg);
+    filter: drop-shadow(0 0 12px #fbbf24) drop-shadow(0 0 20px #f97316);
+  }
+  50% {
+    transform: scale(0.95, 0.9) rotate(-2deg);
+    filter: drop-shadow(0 0 7px #f59e0b) drop-shadow(0 0 14px #ef4444);
+  }
+  75% {
+    transform: scale(1.05, 1.2) rotate(1deg);
+    filter: drop-shadow(0 0 14px #fbbf24) drop-shadow(0 0 22px #f97316);
+  }
+}
+
+.animate-flame {
+  animation: flameFlicker 1.2s ease-in-out infinite alternate;
+  transform-origin: bottom center;
+}
+
+/* Smoke puff when candle is blown */
+@keyframes smokeDissipate {
+  0% {
+    opacity: 0.9;
+    transform: translateY(0) scale(0.5);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateY(-20px) scale(1.2) translateX(4px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-40px) scale(1.8) translateX(-6px);
+  }
+}
+
+.animate-smoke {
+  animation: smokeDissipate 1.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+/* Shimmer ribbon */
+@keyframes ribbonShine {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+
+.ribbon-shine {
+  animation: ribbonShine 3s infinite linear;
+}
